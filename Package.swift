@@ -14,6 +14,10 @@ let package = Package(
         .library(
             name: "NSExceptionKtBugsnag",
             targets: ["NSExceptionKtBugsnag"]
+        ),
+        .library(
+            name: "NSExceptionKtKSCrash",
+            targets: ["NSExceptionKtKSCrash"]
         )
     ],
     dependencies: [
@@ -24,6 +28,10 @@ let package = Package(
         .package(
             url: "https://github.com/bugsnag/bugsnag-cocoa.git",
             "6.22.1"..<"7.0.0"
+        ),
+        .package(
+            url: "https://github.com/kstenerud/KSCrash.git",
+            "1.15.24"..<"2.0.0"
         )
     ],
     targets: [
@@ -55,6 +63,15 @@ let package = Package(
                 .product(name: "Bugsnag", package: "bugsnag-cocoa")
             ],
             path: "NSExceptionKtBugsnag"
+        ),
+        
+        .target(
+            name: "NSExceptionKtKSCrash",
+            dependencies: [
+                .target(name: "NSExceptionKtCoreObjC"),
+                .product(name: "KSCrash", package: "KSCrash")
+            ],
+            path: "NSExceptionKtKSCrash"
         )
     ],
     swiftLanguageVersions: [.v5]
