@@ -8,6 +8,7 @@ Checkout the implementation specific `README`s for usage and installation detail
 
 * [Crashlytics](NSExceptionKtCrashlytics/README.md)
 * [Bugsnag](NSExceptionKtBugsnag/README.md)
+* [KSCrash](NSExceptionKtKSCrash/README.md)
 
 ## Why this library?
 
