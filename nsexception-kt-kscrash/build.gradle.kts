@@ -46,6 +46,7 @@ kotlin {
         it.compilations.getByName("main") {
             cinterops.create("KSCrash") {
                 includeDirs("$projectDir/src/nativeInterop/cinterop/KSCrash")
+                definitionFile("$projectDir/src/nativeInterop/cinterop/KSCrash.def")
             }
         }
     }
